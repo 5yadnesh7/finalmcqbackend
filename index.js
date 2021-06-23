@@ -11,7 +11,12 @@ app.use(
         credentials: true,
     })
 );
-
+app.use((req,res,next)=>{
+    res.setHeader('Acces-Control-Allow-Origin','*');
+    res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+    res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
+    next(); 
+})
 // app.use(cors());  
 //create app server
 // var server = app.listen(9000,  "127.0.0.1", function () {
