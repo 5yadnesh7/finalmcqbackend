@@ -6,7 +6,7 @@ var connection = require('./connection');
 
 app.use(
     cors({
-        origin: ["http://localhost:3001","http://localhost:5000"],
+        origin: ["http://localhost:3001","http://localhost:5000","http://exammcq.infinityfreeapp.com"],
         methods: ["GET", "POST"],
         credentials: true,
     })
