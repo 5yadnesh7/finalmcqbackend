@@ -4,20 +4,20 @@ var app = express();
 var cors = require('cors');
 var connection = require('./connection');
 
-// app.use(
-//     cors({
-//         origin: ["http://localhost:3001"],
-//         methods: ["GET", "POST"],
-//         credentials: true,
-//     })
-// );
+app.use(
+    cors({
+        origin: ["http://localhost:3001","http://localhost:5000"],
+        methods: ["GET", "POST"],
+        credentials: true,
+    })
+);
 app.use((req,res,next)=>{
     res.setHeader('Acces-Control-Allow-Origin','*');
     res.setHeader('Acces-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
     res.setHeader('Acces-Contorl-Allow-Methods','Content-Type','Authorization');
     next(); 
 })
-app.use(cors());  
+// app.use(cors());  
 //create app server
 // var server = app.listen(9000,  "127.0.0.1", function () {
 
