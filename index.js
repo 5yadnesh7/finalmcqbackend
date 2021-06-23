@@ -4,7 +4,15 @@ var app = express();
 var cors = require('cors');
 var connection = require('./connection');
 
-app.use(cors());  
+app.use(
+    cors({
+        origin: ["http://localhost:3001"],
+        methods: ["GET", "POST"],
+        credentials: true,
+    })
+);
+
+// app.use(cors());  
 //create app server
 // var server = app.listen(9000,  "127.0.0.1", function () {
 
